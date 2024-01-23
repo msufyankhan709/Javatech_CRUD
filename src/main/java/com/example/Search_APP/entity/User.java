@@ -2,6 +2,8 @@ package com.example.Search_APP.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import java.util.List;
 
@@ -18,6 +20,7 @@ public class User {
     private String deviceId;
 
     @OneToMany(mappedBy = "user")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private List<SearchData> searches;
 
     @OneToMany(mappedBy = "user")

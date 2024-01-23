@@ -33,6 +33,7 @@ public class SearchController {
         }
     }
 
+
     @GetMapping("/{userId}")
     public ResponseEntity<List<SearchData>> getPreviousSearches(@PathVariable Long userId) {
         List<SearchData> searches = searchService.getPreviousSearches(userId);
